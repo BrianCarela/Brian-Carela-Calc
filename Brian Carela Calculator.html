@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>basic calc functions</title>
+
+</head>
+<body>
+	<form id="cal" name="Calc">
+		<table>
+			<tr>
+				<input type="text" id="screen" name="Input" size="16" readonly>
+			</tr>
+			<br>
+			<tr>
+				<input type="button" name="clear" value="CE" onclick="Calc.Input.value = ''">
+				<!--<input type="button" name="backspace" value="&larr;" onclick="Calc.Input.value -= ''">-->
+				<input type="button" name="avg" value="Avg" onclick="averagee();">
+				<br>
+				<input type="button" name="seven" value="7" onclick="Calc.Input.value += '7'">
+				<input type="button" name="eight" value="8" onclick="Calc.Input.value += '8'">
+				<input type="button" name="nine" value="9" onclick="Calc.Input.value += '9'">
+				<input type="button" name="mul" value="&times;" onclick="Calc.Input.value += '*'">
+				<br>
+				<input type="button" name="four" value="4" onclick="Calc.Input.value += '4'">
+				<input type="button" name="five" value="5" onclick="Calc.Input.value += '5'">
+				<input type="button" name="six" value="6" onclick="Calc.Input.value += '6'">
+				<input type="button" name="div" value="&divide;" onclick="Calc.Input.value += '/'">
+				<br>
+				<input type="button" name="one" value="1" onclick="Calc.Input.value += '1'">
+				<input type="button" name="two" value="2" onclick="Calc.Input.value += '2'">
+				<input type="button" name="three" value="3" onclick="Calc.Input.value += '3'">
+				<input type="button" name="plus" value="+" onclick="Calc.Input.value += '+'">
+				<br>
+				<input type="button" name="zero" value="0" onclick="Calc.Input.value += '0'">
+				<input type="button" name="point" value="." onclick="Calc.Input.value += '.'">
+				<input type="button" name="min" value="-" onclick="Calc.Input.value += '-'">
+				<input type="button" name="eq" value="=" onclick="Calc.Input.value = eval(Calc.Input.value)">
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		function averagee() {
+    		var myScreen = document.getElementById("screen").value;
+    		var num = myScreen.split("+");
+    		var divv = num.length;
+    		var summ = eval(myScreen);
+    		var aver = summ / divv;
+    		document.getElementById("screen").value = aver;
+		};
+	</script>
+</body>
+</html>
