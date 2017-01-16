@@ -1,44 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>basic calc functions</title>
-
+	<title>Blksheep's Calculator!</title>
+	<style type="text/css">
+		table{
+			border: outset;
+		}
+		#field{
+			border: inset;
+			border-color: limegreen;
+		}
+		td{
+			text-align: center;
+		}
+		table{
+			background-color: rgb(39,40,34);
+		}
+		.num {
+   			border-top: 1px solid #d282fa;
+   			background: #450f54;
+   			background: -webkit-gradient(linear, left top, left bottom, from(#af0ccf), to(#450f54));
+   			background: -webkit-linear-gradient(top, #af0ccf, #450f54);
+   			background: -moz-linear-gradient(top, #af0ccf, #450f54);
+   			background: -ms-linear-gradient(top, #af0ccf, #450f54);
+   			background: -o-linear-gradient(top, #af0ccf, #450f54);
+   			padding: 20px 40px;
+   			-webkit-border-radius: 14px;
+   			-moz-border-radius: 14px;
+   			border-radius: 14px;
+   			-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   			color: white;
+   			font-size: 24px;
+   			font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   			text-decoration: none;
+   			vertical-align: middle;
+   		}
+		.num:hover {
+   			border-top-color: #a303a6;
+   			background: #a303a6;
+   			color: #ccc;
+   		}
+		.num:active {
+   			border-top-color: #d9046b;
+   			background: #d9046b;
+   		}
+		.but {
+   			border-top: 1px solid #96d1f8;
+   			background: #65a9d7;
+   			background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   			background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   			background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   			background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   			background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   			padding: 20px 40px;
+   			-webkit-border-radius: 14px;
+   			-moz-border-radius: 14px;
+   			border-radius: 14px;
+   			-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			box-shadow: rgba(0,0,0,1) 0 1px 0;
+   			text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   			color: white;
+   			font-size: 24px;
+   			font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   			text-decoration: none;
+   			vertical-align: middle;
+   		}
+		.but:hover {
+   			border-top-color: #28597a;
+   			background: #28597a;
+   			color: #ccc;
+   		}
+	</style>
 </head>
 <body>
-	<form id="cal" name="Calc">
-		<table>
-			<tr>
+<form name="Calc">
+	<table width="400px" height="500px">
+		<tr>
+			<th colspan="4" id="field">
 				<input type="text" id="screen" name="Input" size="16" readonly>
-			</tr>
-			<br>
-			<tr>
-				<input type="button" name="clear" value="CE" onclick="Calc.Input.value = ''">
-				<!--<input type="button" name="backspace" value="&larr;" onclick="Calc.Input.value -= ''">-->
-				<input type="button" name="avg" value="Avg" onclick="averagee();">
-				<br>
-				<input type="button" name="seven" value="7" onclick="Calc.Input.value += '7'">
-				<input type="button" name="eight" value="8" onclick="Calc.Input.value += '8'">
-				<input type="button" name="nine" value="9" onclick="Calc.Input.value += '9'">
-				<input type="button" name="mul" value="&times;" onclick="Calc.Input.value += '*'">
-				<br>
-				<input type="button" name="four" value="4" onclick="Calc.Input.value += '4'">
-				<input type="button" name="five" value="5" onclick="Calc.Input.value += '5'">
-				<input type="button" name="six" value="6" onclick="Calc.Input.value += '6'">
-				<input type="button" name="div" value="&divide;" onclick="Calc.Input.value += '/'">
-				<br>
-				<input type="button" name="one" value="1" onclick="Calc.Input.value += '1'">
-				<input type="button" name="two" value="2" onclick="Calc.Input.value += '2'">
-				<input type="button" name="three" value="3" onclick="Calc.Input.value += '3'">
-				<input type="button" name="plus" value="+" onclick="Calc.Input.value += '+'">
-				<br>
-				<input type="button" name="zero" value="0" onclick="Calc.Input.value += '0'">
-				<input type="button" name="point" value="." onclick="Calc.Input.value += '.'">
-				<input type="button" name="min" value="-" onclick="Calc.Input.value += '-'">
-				<input type="button" name="eq" value="=" onclick="Calc.Input.value = eval(Calc.Input.value)">
-			</tr>
-		</table>
-	</form>
-	<script type="text/javascript">
+			</th>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input class="but" type="button" name="clear" value="CE" onclick="Calc.Input.value = ''">
+			</td>
+			<td colspan="2">
+				<input class="but" type="button" name="avg" value="Avg" onclick="averagee();">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="num" type="button" name="seven" value="7" onclick="Calc.Input.value += '7'">
+			</td>
+			<td>
+				<input class="num" type="button" name="eight" value="8" onclick="Calc.Input.value += '8'">
+			</td>
+			<td>
+				<input class="num" type="button" name="nine" value="9" onclick="Calc.Input.value += '9'">
+			</td>
+			<td>
+				<input class="but" type="button" name="mul" value="&times;" onclick="Calc.Input.value += '*'">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="num" type="button" name="four" value="4" onclick="Calc.Input.value += '4'">
+			</td>
+			<td>
+				<input class="num" type="button" name="five" value="5" onclick="Calc.Input.value += '5'">
+			</td>
+			<td>
+				<input class="num" type="button" name="six" value="6" onclick="Calc.Input.value += '6'">
+			</td>
+			<td>
+				<input class="but" type="button" name="min" value="-" onclick="Calc.Input.value += '-'">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="num" type="button" name="one" value="1" onclick="Calc.Input.value += '1'">
+			</td>
+			<td>
+				<input class="num" type="button" name="two" value="2" onclick="Calc.Input.value += '2'">
+			</td>
+			<td>
+				<input class="num" type="button" name="three" value="3" onclick="Calc.Input.value += '3'">
+			</td>
+			<td>
+				<input class="but" type="button" name="plus" value="+" onclick="Calc.Input.value += '+'">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="num" type="button" name="zero" value="0" onclick="Calc.Input.value += '0'">
+			</td>
+			<td>
+				<input class="but" type="button" name="point" value="." onclick="Calc.Input.value += '.'">
+			</td>
+			<td>
+				<input class="but" type="button" name="div" value="&divide;" onclick="Calc.Input.value += '/'">
+			</td>
+			<td>
+				<input class="but" type="button" name="eq" value="=" onclick="Calc.Input.value = eval(Calc.Input.value)">
+			</td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript">
 		function averagee() {
     		var myScreen = document.getElementById("screen").value;
     		var num = myScreen.split("+");
@@ -47,6 +159,6 @@
     		var aver = summ / divv;
     		document.getElementById("screen").value = aver;
 		};
-	</script>
+</script>
 </body>
 </html>
